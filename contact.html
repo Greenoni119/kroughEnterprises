@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contact Us | Krough Enterprises</title>
+  <meta name="description" content="Contact Krough Enterprises for custom home building, design, and renovation services. Get in touch with our team to discuss your project needs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Main colors */
+      --primary: #847e6a;
+      --secondary: #a89a82;
+      --accent: #cb8842;
+      --dark: #646456;
+      
+      /* Backgrounds */
+      --bg-light: #edece1;
+      --bg-lightest: #e7e3cf;
+      --bg-medium: #ded6c7;
+      --bg-warm: #c7b496;
+      --bg-neutral: #bdb49a;
+      
+      /* Text colors */
+      --text-dark: #646456;
+      --text-medium: #847e6a;
+      
+      /* Special elements */
+      --nav-bg: #646456;
+      --footer-bg: #646456;
+      --card-bg: #e7e3cf;
+      --gold: #d2b072;
+      --tan-dark: #b5a691;
+      --brown: #bca07f;
+    }
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.7;
+      background-color: var(--bg-lightest);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    .bg-primary-custom {
+      background-color: var(--primary);
+    }
+    
+    .bg-secondary-custom {
+      background-color: var(--secondary);
+    }
+    
+    .bg-neutral-custom {
+      background-color: var(--neutral);
+    }
+    
+    .text-accent {
+      color: var(--accent);
+    }
+    
+    .text-primary-custom {
+      color: var(--primary);
+    }
+    
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+    }
+    
+    .navbar {
+      padding: 1rem 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      padding: 0.5rem 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      margin: 0 0.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--gold);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .btn-custom {
+      background-color: var(--accent);
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-custom:hover {
+      background-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-secondary-custom {
+      background-color: var(--secondary);
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary-custom:hover {
+      background-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .page-header {
+      position: relative;
+      height: 50vh;
+      background: linear-gradient(rgba(100, 100, 86, 0.8), rgba(132, 126, 106, 0.7)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--bg-lightest);
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: var(--gold);
+      bottom: -15px;
+      left: 0;
+    }
+    
+    .section-title.text-center:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .contact-section {
+      padding: 5rem 0;
+      background-color: var(--bg-light);
+    }
+    
+    .contact-card {
+      background-color: var(--card-bg);
+      padding: 2.5rem;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form-control {
+      padding: 0.75rem;
+      border-radius: 0;
+      margin-bottom: 1.5rem;
+      background-color: var(--light-alt);
+      border: 1px solid var(--bg-neutral);
+    }
+    
+    .form-control:focus {
+      box-shadow: none;
+      border-color: var(--accent);
+    }
+    
+    .form-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-select {
+      padding: 0.75rem;
+      border-radius: 0;
+      margin-bottom: 1.5rem;
+      background-color: var(--light-alt);
+      border: 1px solid var(--bg-neutral);
+    }
+    
+    .form-select:focus {
+      box-shadow: none;
+      border-color: var(--accent);
+    }
+    
+    .contact-info-card {
+      background-color: var(--primary);
+      color: var(--bg-lightest);
+      padding: 2.5rem;
+      height: 100%;
+    }
+    
+    .contact-info-title {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--accent-light);
+      margin-right: 1rem;
+      margin-top: 0.25rem;
+    }
+    
+    .contact-info-social {
+      margin-top: 2.5rem;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--bg-lightest);
+      border-radius: 50%;
+      margin-right: 10px;
+      text-align: center;
+      line-height: 40px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--gold);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .office-card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .office-title {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    
+    .office-address {
+      margin-bottom: 1rem;
+    }
+    
+    .office-contact {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .office-icon {
+      color: var(--accent);
+      margin-right: 0.75rem;
+    }
+    
+    .map-container {
+      height: 400px;
+      margin-bottom: 2rem;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--bg-lightest);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-title {
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+    }
+    
+    .footer-links a {
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.75rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .page-header {
+        height: 40vh;
+      }
+      
+      .contact-info-card {
+        margin-top: 2rem;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .contact-section {
+        padding: 3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--nav-bg);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span style="color: var(--gold);">Krough</span> Enterprises</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-custom ms-3">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 mb-4">Contact Us</h1>
+          <p class="lead">Get in touch with our team to discuss your custom home building or renovation project.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title text-center">Get In Touch</h2>
+          <p>We're here to answer any questions you may have about our services. Reach out to us and we'll respond as soon as we can.</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="contact-card">
+            <h3 class="mb-4">Send Us a Message</h3>
+            <form id="contactForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="johndoe@example.com" required>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="(123) 456-7890">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="service" class="form-label">Service Interested In</label>
+                    <select class="form-select" id="service" required>
+                      <option value="" selected disabled>Select a service</option>
+                      <option value="custom-home">Custom Home Building</option>
+                      <option value="renovation">Renovation & Remodeling</option>
+                      <option value="design">Architectural Design</option>
+                      <option value="interior">Interior Design</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+              </div>
+              
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="privacyCheck" required>
+                <label class="form-check-label" for="privacyCheck">
+                  I agree to the <a href="#" class="text-accent">privacy policy</a> and consent to being contacted about my inquiry.
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-custom">Send Message</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="col-lg-5">
+          <div class="contact-info-card">
+            <h3 class="contact-info-title">Contact Information</h3>
+            
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <div>
+                <p class="mb-0">1234 Construction Ave, Suite 500</p>
+                <p class="mb-0">San Francisco, CA 94107</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-phone-alt contact-icon"></i>
+              <div>
+                <p class="mb-0">(123) 456-7890</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <div>
+                <p class="mb-0">info@kroughenterprises.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-clock contact-icon"></i>
+              <div>
+                <p class="mb-0">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p class="mb-0">Weekends: By appointment only</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-social">
+              <h4 class="h5 mb-3">Connect With Us</h4>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-houzz"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-5" style="background-color: var(--bg-medium);">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title text-center">Visit Our Office</h2>
+          <p>Come visit our showroom and design center to explore material samples, view project portfolios, and meet with our team.</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.03112971336!2d-122.43913367434553!3d37.76130421441755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1683047310125!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5" style="background-color: var(--bg-lightest);">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title text-center">Frequently Asked Questions</h2>
+          <p>Find answers to some of the most common questions about our services.</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What areas do you serve?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Krough Enterprises primarily serves the greater San Francisco Bay Area, including San Francisco, Marin County, East Bay, and Silicon Valley. However, we also take on select projects throughout Northern California. Please contact us to discuss your specific location.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How long does a typical custom home project take?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>The timeline for a custom home project varies depending on the size, complexity, and specific requirements. Generally, the design phase takes 3-6 months, permitting can take 2-4 months, and construction typically takes 10-14 months. We'll provide a detailed timeline specific to your project during our initial consultation.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Do you provide architectural and interior design services?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Yes, we offer comprehensive architectural and interior design services as part of our full-service approach. Our in-house design team works closely with you to create spaces that reflect your lifestyle, preferences, and needs. We can also collaborate with your existing architect or designer if you prefer.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  What is your process for estimating project costs?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>We provide detailed, transparent project estimates based on your specific requirements. After our initial consultation, we'll develop a preliminary budget range. As the design progresses and selections are made, we refine the estimate to provide you with an accurate project cost. We believe in clear communication throughout this process to ensure there are no surprises.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Are you licensed and insured?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>Yes, Krough Enterprises is fully licensed, bonded, and insured. We maintain all necessary licenses and certifications required for residential construction in California. We also carry comprehensive general liability insurance and workers' compensation insurance to protect our clients and employees.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h5 class="footer-title">Krough Enterprises</h5>
+          <p>Transforming visions into beautiful homes with quality craftsmanship and innovative design for over 25 years.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+          <h5 class="footer-title">Quick Links</h5>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <h5 class="footer-title">Services</h5>
+          <div class="footer-links">
+            <a href="services.html">Design Services</a>
+            <a href="services.html">Construction</a>
+            <a href="services.html">Renovation & Remodeling</a>
+            <a href="services.html">Interior Design</a>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <h5 class="footer-title">Contact Info</h5>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <div>
+                <p class="mb-0">1234 Construction Ave, Suite 500</p>
+                <p class="mb-0">San Francisco, CA 94107</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt contact-icon"></i>
+              <div>
+                <p class="mb-0">(123) 456-7890</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <div>
+                <p class="mb-0">info@kroughenterprises.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center copyright">
+        <div class="col-md-12">
+          <p class="mb-0">&copy; 2025 Krough Enterprises. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom Scripts -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Simulate form submission
+      const submitButton = this.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+      
+      // Simulate a delay for demo purposes
+      setTimeout(function() {
+        // Show success message
+        const formContainer = document.querySelector('.contact-card');
+        formContainer.innerHTML = '<div class="text-center py-5"><i class="fas fa-check-circle text-accent" style="font-size: 4rem;"></i><h3 class="mt-4">Thank You!</h3><p class="mb-0">Your message has been sent successfully. We\'ll get back to you shortly.</p></div>';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
